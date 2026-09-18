@@ -9,8 +9,10 @@ dependencies = [
     "minsearch>=0.1.0",
     "openai>=2.41.0",
     "python-dotenv>=1.2.2",
-    "requests>=2.34.2",
+    "requests",
     "ruff>=0.16.7",
+    "sentence-transformers>=6.0.1",
+    "sqlitesearch>=0.3.0",
     "toyaikit>=0.0.11",
 ]
 
@@ -30,3 +32,10 @@ select = [
     "T201", # Print Statement
 ]
 ignore = ["E501", "PLR0913", "PLR2004"]  # Ruff format takes care of line-too-long
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
